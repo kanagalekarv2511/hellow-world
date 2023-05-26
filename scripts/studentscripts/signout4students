@@ -1,0 +1,11 @@
+#!/bin/bash 
+
+echo " ################ Script to Request Signout till Date  " 
+
+
+echo -e " My Retun Date after Signout is (In YYYYMMDD format  Example 20230519 ) : \n"
+
+read ReturnDate
+echo $ReturnDate
+RollNumber=$(sed -n '/^RollNumber/p' $HOME/userDetails.txt | awk -F: '{print $2}' )
+echo -e " $RollNumber  $ReturnDate" > ../../Return.txt
